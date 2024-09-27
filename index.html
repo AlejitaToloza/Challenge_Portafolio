@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sofadi+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lancelot&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Mi Portafolio</title>
+    <audio id="audio" src="/sonidos/super-mario-bros.mp3" preload="auto" loop></audio>
+    <audio id="hover-sound" src="sonidos/mario-coin.mp3" preload="auto"></audio>
+    <audio id="hover-sound2" src="sonidos/mario-up.mp3" preload="auto"></audio>
+    <audio id="hover-sound3" src="sonidos/mario-bros-jump.mp3" preload="auto"></audio>
+</head>
+
+<body>
+
+<!-- CABECERA -->
+<header>
+    <nav class="cabecera__contenedor">
+        <button id="sound-toggle" aria-label="Toggle Sound">
+            <i id="sound-icon" class="fas fa-volume-up"></i>
+        </button>
+        <div class="cabecera__titulo">
+            <img class="cabecera__logo" src="./imagenes/Mi_Portafolio.png" alt="Logo de Mi Portafolio">
+        </div>
+        <div class="cabecera__logo">
+            <img class="logo__item" src="./imagenes/mario_folder.png" alt="Icono Mario & Princesa Margarita">
+        </div>
+    </nav>
+</header>
+
+<!-- SECCION MENU LATERAL -->
+<main class="contenedor">
+    <section class="menu__contenedor">
+        <ul class="menu__items">
+            <li class="menu__items-icono">
+                <span class="icono"><i class="icono__sobre-mi"></i></span>
+                <button class="boton">Sobre mí</button>
+            </li>
+            <li class="menu__items-icono">
+                <span class="icono"><i class="icono__skills"></i></span>
+                <button class="boton">Skills</button>
+            </li>
+            <li class="menu__items-icono">
+                <span class="icono"><i class="icono__hobbies"></i></span>
+                <button class="boton">Hobbies</button>
+            </li>
+            <li class="menu__items-icono">
+                <span class="icono"><i class="icono__formacion"></i></span>
+                <button class="boton">Formación</button>
+            </li>
+            <li class="menu__items-icono">
+                <span class="icono"><i class="icono__proyectos"></i></span>
+                <button class="boton">Proyectos</button>
+            </li>
+            <li class="menu__items-icono">
+                <span class="icono"><i class="icono__contacto"></i></span>
+                <button class="boton">Contacto</button>
+            </li>
+        </ul>
+    </section>
+
+    <!-- SECCION CONTENEDOR GENERAL -->
+    <section class="contenedor__informacion">
+
+        <!-- SECCION SOBRE MI -->
+        <section class="card__sobremi" style="display: none;">
+            <h1 class="card__sobremi--titulo">SOBRE MI</h1>
+            <p class="card__sobremi--texto">
+                Mi nombre es Alejandra Toloza, soy Ing. de Sistemas, egresada de la Universidad Manuela Beltrán de Bogotá, Colombia.
+                Actualmente soy estudiante del programa ONE de Alura Latam + ORACLE / ONE G7.
+            </p>
+            <img class="card__sobre--imagen" src="/imagenes/sobremi.png" alt="Imagen sobre mí">
+        </section>
+
+        <!-- SECCION SKILLS -->
+        <section class="card__skill" style="display: none;">
+            <section class="card__skill--contenido">
+                <header class="card__skill--info">
+                    <h2 class="card__skill--info--titulo">SOFT SKILL</h2>
+                </header>
+                <div class="card__skill--items skill--soft">
+                    <figure class="card__skill__division soft">
+                        <figcaption class="card__skill__item">Trabajo en<br>equipo</figcaption>
+                        <img class="card__skill--icono" src="/imagenes/trabajo_equipo.png" alt="Trabajo en equipo">
+                    </figure>
+                    <figure class="card__skill__division soft">
+                        <figcaption class="card__skill__item">Organización</figcaption>
+                        <img class="card__skill--icono" src="/imagenes/orden.png" alt="Organización">
+                    </figure>
+                    <figure class="card__skill__division soft">
+                        <figcaption class="card__skill__item">Problem<br>solving</figcaption>
+                        <img class="card__skill--icono" src="/imagenes/mario_resuelve.png" alt="Resolución de problemas">
+                    </figure>
+                    <figure class="card__skill__division soft">
+                        <figcaption class="card__skill__item">Discresión</figcaption>
+                        <img class="card__skill--icono" src="/imagenes/seguridad.png" alt="Discresión">
+                    </figure>
+                    <figure class="card__skill__division soft">
+                        <figcaption class="card__skill__item">Responsabilidad</figcaption>
+                        <img class="card__skill--icono" src="/imagenes/responsabilidad.png" alt="Responsabilidad">
+                    </figure>
+                </div>
+            </section>
+
+            <section class="card__skill--contenido skil--hard">
+                <header class="card__skill--info">
+                    <h2 class="card__skill--info--titulo">HARD SKILL</h2>
+                </header>
+                <div class="card__skill--items">
+                    <figure class="card__skill__division hard">
+                        <figcaption class="card__skill__item">JavaScript</figcaption>
+                        <img class="card__skill--icono" src="/imagenes/javascript.svg" alt="JavaScript Icon">
+                    </figure>
+                    <figure class="card__skill__division hard">
+                        <figcaption class="card__skill__item">HTML</figcaption>
+                        <img class="card__skill--icono" src="/imagenes/html.svg" alt="HTML Icon">
+                    </figure>
+                    <figure class="card__skill__division hard">
+                        <figcaption class="card__skill__item">CSS</figcaption>
+                        <img class="card__skill--icono" src="/imagenes/css.svg" alt="CSS Icon">
+                    </figure>
+                    <figure class="card__skill__division hard">
+                        <figcaption class="card__skill__item">GitBash</figcaption>
+                        <img class="card__skill--icono" src="/imagenes/git-bash.svg" alt="GitBash Icon">
+                    </figure>
+                    <figure class="card__skill__division hard">
+                        <figcaption class="card__skill__item">Trello</figcaption>
+                        <img class="card__skill--icono" src="/imagenes/trello.svg" alt="Trello Icon">
+                    </figure>
+                    <figure class="card__skill__division hard">
+                        <figcaption class="card__skill__item">Figma</figcaption>
+                        <img class="card__skill--icono" src="/imagenes/figma.svg" alt="Figma Icon">
+                    </figure>
+                </div>
+            </section>
+        </section>
+
+        <!-- SECCION HOBBIES -->
+        <section class="card__hobbies" style="display: none;">
+            <header class="card__hobbies--info">
+                <h2 class="card__hobbies--info--titulo">HOBBIES</h2>
+            </header>
+            <div class="card__hobbies--items">
+                <figure class="card__hobbies__division hobbie">
+                    <img class="card__hobbies--icono musica" src="/imagenes/ventana.png" alt="Escuchar música">
+                    <figcaption class="card__hobbies__item">Escuchar música</figcaption>
+                </figure>
+                <figure class="card__hobbies__division hobbie">
+                    <img class="card__hobbies--icono pizza" src="/imagenes/ventana.png" alt="Comer pizza">
+                    <figcaption class="card__hobbies__item">Comer pizza</figcaption>
+                </figure>
+                <figure class="card__hobbies__division hobbie">
+                    <img class="card__hobbies--icono arte" src="/imagenes/ventana.png" alt="Arte">  
+                    <figcaption class="card__hobbies__item">Arte</figcaption>
+                </figure>
+                <figure class="card__hobbies__division hobbie">
+                    <img class="card__hobbies--icono peliculas" src="/imagenes/ventana.png" alt="Ver películas">
+                    <figcaption class="card__hobbies__item">Ver películas</figcaption>
+                </figure>
+                <figure class="card__hobbies__division hobbie">
+                    <img class="card__hobbies--icono estudio" src="/imagenes/ventana.png" alt="Estudiar">
+                    <figcaption class="card__hobbies__item">Estudiar</figcaption>
+                </figure>
+                <figure class="card__hobbies__division hobbie">
+                    <img class="card__hobbies--icono juegos" src="/imagenes/ventana.png" alt="Video juegos">
+                    <figcaption class="card__hobbies__item">Video juegos</figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <!-- SECCION FORMACION -->
+        <section class="card__formacion" style="display: none;">
+            <header class="card__formacion--info">
+                <h2 class="card__formacion--info--titulo">FORMACION SUPERIOR</h2>
+            </header>
+            <div class="card__formacion--items">
+                <figure class="card__formacion__division card">
+                    <figcaption class="card__formacion__item">Front-End</figcaption>
+                    <img class="card__formacion--icono" src="/imagenes/one.jpeg" alt="Alura+ONE">
+                </figure>
+                <figure class="card__formacion__division card">
+                    <figcaption class="card__formacion__item">Inglés</figcaption>
+                    <img class="card__formacion--icono" src="/imagenes/wse.png" alt="Wall Street English">
+                </figure>
+                <figure class="card__formacion__division card">
+                    <figcaption class="card__formacion__item">Master en Java</figcaption>
+                    <img class="card__formacion--icono" src="/imagenes/ielvetico.png" alt="Istituto Elvetico">
+                </figure>
+                <figure class="card__formacion__division card">
+                    <figcaption class="card__formacion__item">Ingeniero de Sistemas</figcaption>
+                    <img class="card__formacion--icono" src="/imagenes/UMB.png" alt="Universidad Manuela Beltrán">
+                </figure>
+                <figure class="card__formacion__division card">
+                    <figcaption class="card__formacion__item">Técnico Profesional en Ingeniería de Sistemas</figcaption>
+                    <img class="card__formacion--icono" src="/imagenes/cun.png" alt="CUN">
+                </figure>
+            </div>
+            <img class="card__formacion--imagen" src="/imagenes/formacion.png" alt="Imagen de formación">
+        </section>
+
+        <!-- SECCION PROYECTOS -->
+        <section class="card__proyectos" style="display: none;">
+            <header class="card__proyectos--info">
+                <h2 class="card__proyectos--info--titulo">PROYECTOS</h2>
+            </header>
+            <div class="card__proyectos--items">
+                <figure class="card__proyectos__division">
+                    <figcaption class="card__proyectos__item">Encriptador de texto</figcaption>
+                    <img class="card__proyectos--icono" src="/imagenes/encriptador.png" alt="Proyecto Encriptador de texto">
+                    <a class="card__proyectos__link" href="https://encriptador-de-texto-sooty-eta.vercel.app/" target="_blank" rel="noopener noreferrer">Ver proyecto</a>
+                </figure>
+                <figure class="card__proyectos__division">
+                    <figcaption class="card__proyectos__item">Agencia de viajes Jornada</figcaption>
+                    <img class="card__proyectos--icono" src="/imagenes/jornada.png" alt="Proyecto Agencia de viajes Jornada">
+                    <a class="card__proyectos__link" href="https://jornada-one.vercel.app/" target="_blank" rel="noopener noreferrer">Ver proyecto</a>
+                </figure>
+                <figure class="card__proyectos__division">
+                    <figcaption class="card__proyectos__item">Recetas</figcaption>
+                    <img class="card__proyectos--icono" src="/imagenes/recetas.png" alt="Proyecto Recetas">
+                    <a class="card__proyectos__link" href="https://github.com/AlejitaToloza/Recetas/tree/main/recipe-page-main" target="_blank" rel="noopener noreferrer">Ver proyecto</a>
+                </figure>
+                <figure class="card__proyectos__division">
+                    <figcaption class="card__proyectos__item">Card Component</figcaption>
+                    <img class="card__proyectos--icono" src="/imagenes/card_component.png" alt="Proyecto Card Component">
+                    <a class="card__proyectos__link" href="https://github.com/AlejitaToloza/Recetas/tree/main/nft-preview-card-component-main" target="_blank" rel="noopener noreferrer">Ver proyecto</a>
+                </figure>
+                <figure class="card__proyectos__division">
+                    <figcaption class="card__proyectos__item">Interactive Rating</figcaption>
+                    <img class="card__proyectos--icono" src="/imagenes/interactive_raiting.png" alt="Proyecto Interactive Rating">
+                    <a class="card__proyectos__link" href="https://github.com/AlejitaToloza/Recetas/tree/main/interactive-rating-component-main" target="_blank" rel="noopener noreferrer">Ver proyecto</a>
+                </figure>
+                <figure class="card__proyectos__division">
+                    <figcaption class="card__proyectos__item">Advice Generator</figcaption>
+                    <img class="card__proyectos--icono" src="/imagenes/advice_generator.png" alt="Proyecto Advice Generator">
+                    <a class="card__proyectos__link" href="https://github.com/AlejitaToloza/Recetas/tree/main/advice-generator-app-main/advice-generator-app-main" target="_blank" rel="noopener noreferrer">Ver proyecto</a>
+                </figure>
+            </div>
+        </section>
+
+        <!-- SECCION DE CONTACTO -->
+        <section class="card__contacto" style="display: none;">
+            <h1 class="card__contacto--titulo">Contacto</h1>
+            <div class="card__contacto--items">
+                <form class="card__contacto__formulario" aria-label="Formulario de contacto">
+                    <label class="card__contacto__descripcion" for="nombre">Nombre:</label>
+                    <input class="card__contacto__campo" type="text" id="nombre" placeholder="">
+                    
+                    <label class="card__contacto__descripcion" for="correo">Correo electrónico:</label>
+                    <input class="card__contacto__campo" type="email" id="correo" placeholder="">
+                    
+                    <label class="card__contacto__descripcion" for="mensaje">Mensaje:</label>
+                    <textarea class="card__contacto__campo contacto__campo--textarea" id="mensaje" placeholder=""></textarea>
+                    
+                    <button class="card__contacto__boton" type="submit">Enviar</button>
+                </form>
+            </div>
+        </section>
+
+    </section>
+</main>
+
+<!-- FOOTER -->
+<footer class="footer">
+    <div class="enlaces">
+        <a href="https://linkedin.com/in/judy-toloza-ortiz" target="_blank" rel="noopener noreferrer">
+            <img class="enlaces__icono enlaces__icono-linkedin" src="./imagenes/LinkedIn.png" alt="LinkedIn">
+        </a>
+        <a href="https://github.com/AlejitaToloza" target="_blank" rel="noopener noreferrer">
+            <img class="enlaces__icono enlaces__icono-github" src="./imagenes/GitHub.png" alt="GitHub">
+        </a>
+        <a href="./cv/CV_Alejandra_Toloza.pdf" download>
+            <img class="cv" src="./imagenes/carpeta.png" alt="Descargar CV" title="Descargar CV"></button>   
+        </a>
+    </div>
+</footer>
+
+<script src="/js/app.js"></script>
+
+</body>
+</html>

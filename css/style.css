@@ -1,0 +1,635 @@
+:root {
+    --lila-oscuro: #8224a4;
+    --lila-medio: #895fc8;
+    --lila-claro: #bbb0d4;
+    --brillo: #79d9a4;
+    --tierra: #B87A48;
+    --beige-claro: #fff7e6;
+    --negro-texto: #0e0f1a;
+    --blanco: #ffffff;
+
+    --font-primaria: "Sofadi One", system-ui;
+    --font-secundaria: "Lancelot", serif;
+    --font-terciaria: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* ESTILO BOTON AUDIO */
+
+#sound-toggle {
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    display: flex;
+    align-items: center; /* Centra el ícono y el texto verticalmente */
+    border-radius: 50%;
+    background: var(--beige-claro);
+    box-shadow: 1px 2px 2px 1px rgba(26, 23, 19, 2);
+    border: none;
+}
+
+
+/* FUENTES */
+body {
+    font-family: var(--font-primaria);
+    background-color: var(--tierra);
+    max-height: 100vh;
+    font-size: 14px;
+    text-align: center;
+    margin: 0; /* Eliminar margen por defecto */
+}
+
+/* CONTENEDOR */
+.contenedor {
+    display: flex;
+    flex-direction: row; /* Asegura que el menú y la información estén en fila */
+    background-image: url(/imagenes/paisaje.png);
+    background-repeat: no-repeat;
+    max-width: 100%; /* Asegura que ocupe todo el ancho */
+}
+
+/* CABECERA Y MENÚ */
+.cabecera__contenedor,
+.menu__contenedor,
+.footer {
+    position: relative;
+    background: url(/imagenes/bloque.png) repeat;
+}
+
+.cabecera__contenedor::before,
+.menu__contenedor::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0.8; /* Ajusta la transparencia aquí (0 es completamente transparente, 1 es opaco) */
+    z-index: -1; /* Asegura que el pseudo-elemento esté detrás del contenido */
+}
+
+.cabecera__contenedor {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100%;
+    height: 7rem;
+}
+
+.cabecera__titulo,
+.cabecera__logo {
+    padding: 0 2rem;
+}
+
+.logo__item {
+    justify-content: flex-end;
+    border-radius: 2rem;
+}
+
+.logo__item:hover {
+    content: url(/imagenes/princesa_margarita.png);
+}
+
+/* MENU LATERAL */
+.menu__contenedor {
+    width: 10rem;
+    font-size: 12px;
+    flex-shrink: 0; /* Evita que el menú se reduzca */
+}
+
+.menu__items {
+    display: flex;
+    flex-direction: column; /* Cambia a columna para un mejor diseño */
+    align-items: center;
+}
+
+.menu__items-icono {
+    padding: 0 2rem 2rem;
+}
+
+/* ESTILO ICONOS */
+.logo__item,
+.icono {
+    background-color: var(--beige-claro);
+    display: inline-block;
+    width: 100px; /* Ancho de la imagen */
+    height: 100px; /* Alto de la imagen */
+    border-radius: 50%; /* Hace la imagen redonda */
+    overflow: hidden; /* Oculta cualquier contenido que sobresalga */
+    margin-bottom: 0.3rem;
+    border-style: hidden;
+}
+
+.icono::before {
+    display: block; /* Asegura que el contenido se muestre correctamente */
+    width: 100%; /* Asegura que la imagen ocupe todo el espacio */
+    height: 100%; /* Asegura que la imagen ocupe todo el espacio */
+}
+
+/* Iconos específicos */
+.icono__sobre-mi::before {
+    content: url(/imagenes/mario_icono.png);
+}
+
+.icono__skills::before {
+    content: url(/imagenes/mario_poder.jpg);
+}
+
+.icono__hobbies::before {
+    content: url(/imagenes/mario_hobbie.png);
+}
+
+.icono__formacion::before {
+    content: url(/imagenes/mario_presenta.png);
+}
+
+.icono__proyectos::before {
+    content: url(/imagenes/mario_regalo.png);
+}
+
+.icono__contacto::before {
+    content: url(/imagenes/cubo.png);
+}
+
+/* Asegúrate de que el contenido esté centrado */
+.icono__sobre-mi,
+.icono__skills,
+.icono__hobbies,
+.icono__formacion,
+.icono__proyectos,
+.icono__contacto {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ESTILOS DEL BOTÓN */
+.boton {
+    width: 100%;
+    height: 100%;
+    background-color: var(--lila-medio);
+    color: var(--blanco);
+    border: none;
+    padding: 10px; /* Espaciado interno */
+    font-family: var(--font-secundaria);
+    font-size: 24px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s, box-shadow 0.3s; /* Suaviza la transición */
+    box-shadow: 10px 20px 15px rgba(0, 0, 0, 0.80); /* Sombra */
+}
+
+/* Efecto al pasar el mouse */
+.boton:hover {
+    background-color: var(--brillo);
+    color: var(--negro-texto);
+    box-shadow: 0 6px 30px rgba(167, 255, 192, 0.597);
+    text-shadow: 2px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* CONTENEDOR INFORMACION */
+.contenedor__informacion {
+    display: flex;
+    flex-direction: column; /* Asegura que las secciones se apilen verticalmente */
+    flex-grow: 1; /* Permite que este contenedor ocupe el espacio restante */
+    font-family: var(--font-secundaria);
+    font-size: 24px;
+    margin: 1rem 2rem;
+}
+
+.card__sobremi,
+.card__skill--contenido,
+.card__hobbies,
+.card__formacion,
+.card__proyectos,
+.card__contacto {
+    background: var(--beige-claro);
+    box-shadow: 0 25px 30px rgba(26, 23, 19, 0.842);
+}
+
+/* TITULOS */
+.card__sobremi--titulo,
+.card__skill--info--titulo,
+.card__hobbies--info--titulo,
+.card__formacion--info--titulo,
+.card__proyectos--info--titulo,
+.card__contacto--titulo {
+    font-size: 28px;
+    margin-bottom: 2rem;
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+.card__skill--info--titulo {
+    font-family: var(--font-primaria);
+    font-size: 24px;
+}
+
+/* DESCRIPCIONES */
+.card__sobremi--texto,
+.card__skill--info--texto,
+.card__contacto__campo {
+    text-align: justify;
+    font-family: var(--font-terciaria);
+    font-size: 24px;
+    margin: 1rem;
+}
+
+/* INFO SKILLS */
+
+.card__skill--contenido {
+    flex: 1; /* Permite que ocupe todo el espacio disponible */
+    border-radius: 20px;
+    margin: 2rem;
+    padding: 2rem;
+}
+
+/* GRID PARA HABILIDADES, HOBBIES Y FORMACION */
+.card__skill--items,
+.card__hobbies--items,
+.card__formacion--items {
+     display: flex; /* Cambia a flex para mostrar en fila */
+    flex-wrap: wrap; /* Permite que los elementos se envuelvan si no hay espacio */
+    gap: 25px;
+    padding: 40px;
+    text-align: center; 
+    justify-content: space-between; /* Centra los íconos horizontalmente */
+}
+
+.hobbie {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+/* ESTILO CAJAS DE HARD SKILL */
+.card__skill--items .card,
+.card__hobbies--items .card,
+.card__formacion--items .card
+.card__proyectos--items .card {
+    background-color: var(--beige-claro); /* Color de fondo */
+    border-radius: 10px; /* Bordes redondeados */
+    padding: 15px; /* Espaciado interno */
+    box-shadow: 0 8px 10px rgba(0, 0, 0, 0.462); /* Sombra suave */
+    display: flex; /* Permite que el contenido se ajuste */
+    flex-direction: column; /* Asegura que el contenido se apile verticalmente */
+    align-items: center; /* Centra el contenido horizontalmente */
+    justify-content: center; /* Centra el contenido verticalmente */
+    min-height: 100px; /* Altura mínima para mantener uniformidad */
+}
+
+.card__hobbies--icono {
+    width: 12rem;
+    height: auto;
+}
+
+.card__skill__division,
+.card__formacion__division {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: auto;
+    text-align: center; /* Centra el texto y la imagen */
+    background-color: var(--blanco); /* Color de fondo para cada figura */
+    border-radius: 0 4rem; /* Bordes redondeados */
+    padding: 0.7rem; /* Espaciado interno */
+    box-shadow: 2px 0 10px 1px var(--lila-oscuro); /* Sombra */
+    transition: transform 0.3s; /* Transición suave para el hover */
+}
+
+/* ESTILOS CAJAS SOFT SKILLS */
+.soft {
+    box-shadow: none;
+}
+
+.skill--soft{
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: center;
+}
+
+.soft {
+    background: url(/imagenes/tubo.png); /* Color de fondo para cada figura */
+    background-repeat: no-repeat;
+    border-radius: 0;
+    background-position: center;
+    text-align: justify;
+}
+
+.musica:hover {
+    content: url(/imagenes/hobbie.png);
+    width: 10rem;
+}
+
+.pizza:hover {
+    content: url(/imagenes/mario-pizza.png);
+    width: 10rem;
+}
+
+.arte:hover {
+    content: url(/imagenes/arte.png);
+    width: 10rem;
+}
+
+.peliculas:hover {
+    content: url(/imagenes/cine.jpeg);
+    width: 10rem;
+}
+
+.estudio:hover {
+    content: url(/imagenes/estudio.png);
+    width: 10rem;
+}
+
+.juegos:hover {
+    content: url(/imagenes/juegos.png);
+    width: 10rem;
+}
+
+.card__skill__division:hover,
+.card__hobbies__division:hover,
+.card__formacion__division:hover
+.card__proyectos__division:hover {
+    transform: scale(1.2);  /* Efecto de zoom al pasar el mouse */
+}
+
+.card__skill__item,
+.card__hobbies__item,
+.card__formacion__item,
+.card__proyectos__item {
+    font-family: var(--font-secundaria);
+    font-weight: bold;
+    margin: 0;
+    text-align: center;
+}
+
+.card__skill--icono,
+.card__formacion--icono {
+    width: 5.2rem; /* Ancho de los iconos */
+    height: auto; /* Mantiene la proporción de la imagen */
+    margin: 0.5rem;
+    align-items: center;
+}
+
+.card__skill--icono:hover {
+    content: url(/imagenes/moneda.png);
+}
+
+.card__proyectos--icono {
+    width: 350px;
+    height: 300px;
+    overflow: hidden; /* Oculta cualquier contenido que sobresalga */
+}
+
+/* PRUEBA CARTAS */
+.card {
+    perspective: 1000px; /* Añadir perspectiva */
+}
+
+.card__formacion__division {
+    position: relative;
+    width: 200px; /* Ajusta según sea necesario */
+    height: 200px; /* Ajusta según sea necesario */
+    overflow: hidden;
+}
+
+.card__formacion__item {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backface-visibility: hidden; /* Oculta el reverso */
+    transition: transform 0.6s; /* Suaviza la transición */
+    font-size: 24px; /* Tamaño de fuente */
+    color: var(--lila-oscuro); /* Color del texto */
+    background-color: rgba(137, 97, 152, 0.225); /* Fondo semi-transparente */
+}
+
+.card__formacion--icono {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 70%;
+    height: 70%;
+    margin: 1rem;
+    object-fit: contain; /* Asegura que la imagen cubra el área */
+    transition: opacity 0.6s; /* Suaviza la transición de opacidad */
+    backface-visibility: hidden; /* Oculta el reverso */
+}
+
+.card__formacion__item--back {
+    transform: rotateY(180deg); /* Gira el reverso */
+}
+
+.card__formacion__division:hover .card__formacion__item {
+    transform: rotateY(180deg); /* Gira el texto */
+}
+
+.card__formacion__division:hover .card__formacion--icono {
+    opacity: 1; /* Muestra la imagen */
+}
+
+/* Para ocultar el icono cuando no está en hover */
+.card__formacion__division .card__formacion--icono {
+    opacity: 0; /* Oculta la imagen inicialmente */
+}
+
+
+/* SECCION PROYECTOS */
+.card__proyectos--items {
+    display: flex; /* Para alinear los elementos en fila */
+    overflow-x: auto; /* Habilita el scroll horizontal */
+    padding: 1rem 2rem; /* Añade un poco de espacio interior */
+    border: 1px solid var(--lila-oscuro); /* Opcional: añade un borde */
+    border-radius: 8px; /* Opcional: redondea las esquinas */
+    align-items: center;
+    background-color: var(--blanco);
+    max-width: 1350px;
+}
+
+.card__proyectos__division {
+    display: flex;
+    flex-direction: column;
+    margin: 1rem; /* Espaciado entre las tarjetas */
+    padding: 1rem;
+    flex: 0 0 auto; /* Permite que las tarjetas mantengan su ancho natural */
+    width: 450px; /* Ajusta el ancho de cada tarjeta */
+    height: 370px; /* Ajusta el alto de cada tarjeta */
+    object-fit: contain; /* Asegura que la imagen se ajuste sin distorsionarse */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.642); /* Opcional: sombra para las tarjetas */
+    background: var(--beige-claro);
+    border-radius: 5px;
+    max-width: 80%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card__proyectos__item,
+.card__proyectos__link {
+    padding: 1rem;
+}
+
+.card__proyectos__link {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+
+/* SECCION CONTACTO*/
+.card__contacto--items {
+    display:flex;
+    text-align: justify;
+    justify-content: space-around;
+    
+}
+
+.card__contacto__formulario {
+    display: flex;
+    flex-direction: column;
+    font-size: 24px;
+    padding: 1rem;
+    margin: 1rem;
+}
+
+.card__contacto__boton {
+    display: flex;
+    justify-content: center;
+    padding: 0.5rem;
+    margin: 0.5rem;
+    font-family: var(--font-primaria);
+    font-weight: 300;
+    font-size: 20px;
+    border-radius: 10px;
+    height: 3rem;
+    width: 7rem;
+}
+
+.card__contacto__campo {
+    border-color: var(--lila-medio);
+    font-size: 24px;
+    text-align: justify;
+    
+}
+
+
+/* FOOTER */
+.enlaces {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+}
+
+.enlaces__icono {
+    width: 4rem;  /* Ancho del ícono */
+    height: 4rem; /* Alto del ícono */
+    object-fit: contain; /* Asegura que la imagen se ajuste sin distorsionarse */
+    margin: 0 1rem; /* Espaciado entre íconos */
+}
+
+.enlaces__icono-github {
+    width: 5.3rem;  /* Ancho del ícono */
+    height: 5.3rem; /* Alto del ícono */
+    object-fit: contain; /* Asegura que la imagen se ajuste sin distorsionarse */
+    margin: 0 1rem; /* Espaciado entre íconos */
+}
+
+.enlaces__icono-github:hover,
+.enlaces__icono-linkedin:hover,
+.enlaces__icono-cv:hover {
+    cursor: pointer;
+}
+
+.enlaces__icono-github:hover {
+    content: url(/imagenes/mario_cat.png);
+}
+
+.enlaces__icono-linkedin:hover {
+    content: url(/imagenes/estrella.png);
+}
+
+.cv:hover {
+    content: url(/imagenes/flor.png);
+}
+
+.cv {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+
+/* PRUEBA DE ACTIVACION CLICK */
+.card__sobremi,
+.card__skill,
+.card__hobbies,
+.card__formacion,
+.card__proyectos,
+.card__contacto {
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+/* MEDIA QUERIES PARA RESPONSIVIDAD */
+@media (max-width: 768px) {
+    .contenedor {
+        flex-direction: column; /* Cambia a columna en pantallas pequeñas */
+    }
+
+    .cabecera__contenedor {
+        flex-direction: column; /* Cambia a columna */
+        height: auto; /* Ajusta la altura */
+    }
+
+    .menu__contenedor {
+        width: 100%; /* Ancho completo en pantallas pequeñas */
+        font-size: 14px; /* Aumenta el tamaño de fuente */
+    }
+
+    .menu__items {
+        flex-direction: row; /* Cambia a fila en pantallas pequeñas */
+        flex-wrap: wrap; /* Permite que los elementos se envuelvan */
+    }
+
+    .card__sobremi,
+    .card__skill,
+    .card__hobbies,
+    .card__formacion,
+    .card__proyectos,
+    .card__contacto {
+        margin: 0.5rem; /* Reduce el margen */
+        font-size: 20px; /* Ajusta el tamaño de fuente */
+    }
+
+    .card__proyectos--items {
+        flex-direction: column; /* Cambia a columna en pantallas pequeñas */
+        padding: 1rem; /* Reduce el padding */
+    }
+
+    .card__proyectos__division {
+        width: 100%; /* Ancho completo en pantallas pequeñas */
+        height: auto; /* Altura automática */
+    }
+
+    .card__contacto__formulario {
+        font-size: 18px; /* Ajusta el tamaño de fuente */
+    }
+}
