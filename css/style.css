@@ -573,6 +573,7 @@ body {
     background: none;
     border: none;
     cursor: pointer;
+    margin: 0 16px;
 }
 
 
@@ -588,48 +589,291 @@ body {
     margin-top: 20px;
 }
 
-/* MEDIA QUERIES PARA RESPONSIVIDAD */
-@media (max-width: 768px) {
-    .contenedor {
-        flex-direction: column; /* Cambia a columna en pantallas pequeñas */
+   /* RESPONSIVIDAD PARA IPAD */ 
+    @media (max-width: 768px) and (min-width: 660px) {
+
+        .contenedor {
+            display: flex; /* Asegúrate de que el contenedor sea flex */
+            flex-direction: column; /* Cambia a columna en pantallas pequeñas */
+            width: 100%; /* Asegura que ocupe todo el ancho */
+        }
+    
+        .cabecera__contenedor {
+            flex-direction: column; /* Cambia a columna */
+            height: auto; /* Ajusta la altura */
+            align-items: flex-start;
+            margin: 1rem;
+            width: 100%; /* Asegura que ocupe todo el ancho */
+        }
+    
+        .logo__item {
+            display: none; /* Oculta el logo */
+        }
+    
+        .menu__contenedor {
+            width: 100%; /* Ancho completo en pantallas pequeñas */
+            font-size: 14px; /* Aumenta el tamaño de fuente */
+            height: auto; /* Cambia a auto para evitar problemas de altura */
+            display: flex; /* Asegura que sea flex */
+            flex-wrap: wrap; /* Permite que los elementos se envuelvan */
+        }
+    
+        .menu__items {
+            flex-direction: row; /* Cambia a fila en pantallas pequeñas */
+            flex-wrap: wrap; /* Permite que los elementos se envuelvan */
+            justify-content: space-around;
+            width: 97%; /* Asegura que ocupe todo el ancho */
+        }
+    
+        .menu__items-icono {
+            width: 10%;
+            height: auto; /* Cambia a auto para mantener la proporción */
+            margin: 0.5rem;
+            padding: 0;
+        }
+    
+        .boton {
+            width: 100px;
+            height: 40px;
+            font-size: 20px;
+        }
+    
+        .card__sobremi,
+        .card__skill,
+        .card__hobbies,
+        .card__formacion,
+        .card__proyectos,
+        .card__contacto {
+            margin: 0.5rem; /* Reduce el margen */
+            font-size: 20px; /* Ajusta el tamaño de fuente */
+            width: 100%; /* Asegura que ocupen todo el ancho */
+        }
+    
+        .card__skill--contenido {
+            padding: 0;
+            margin: 1.5rem;
+        }
+    
+        .card__skill--items,
+        .card__hobbies--items {
+            padding: 1.5rem;
+            display: flex; /* Asegura que sea flex */
+            flex-direction: row; /* Asegura que esté en fila */
+            justify-content: space-around;
+            flex-wrap: wrap; /* Permite que se envuelvan */
+        }
+    
+        .card__skill__division,
+        .card__hobbies__division {
+            width: 8rem;
+            height: auto; /* Cambia a auto para mantener proporción */
+            margin: 0 1rem;
+        }
+    
+        .skill--soft,
+        .hard {
+            display: flex; /* Asegura que sea flex */
+            justify-content: center;
+        }
+    
+        .card__hobbies__division {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            padding: 0 0.2rem;
+            margin: 0 0.5rem 5rem;
+        }
+    
+        .card__hobbies__item {
+            font-size: 18px;
+            width: 60px;
+            height: auto; /* Cambia a auto para mantener proporción */
+            align-items: start;
+        }
+    
+        .card__formacion--items {
+            justify-content: space-around;
+            gap: 2.5rem;
+        }
+    
+        .card__formacion__item {
+            font-size: 20px;
+        }
+    
+        .card__proyectos--items {
+            flex-direction: column; /* Cambia a columna en pantallas pequeñas */
+            padding: 1rem; /* Reduce el padding */
+        }
+    
+        .card__proyectos--icono {
+            object-fit: contain; /* Mantiene la proporción de las imágenes */
+            width: 100%; /* Asegura que ocupe todo el ancho */
+            height: auto; /* Cambia a auto para mantener proporción */
+        }
+    
+        .card__proyectos__division {
+            width: 100%; /* Ancho completo en pantallas pequeñas */
+            height: auto; /* Altura automática */
+        }
+    
+        .card__contacto__formulario {
+            font-size: 18px; /* Ajusta el tamaño de fuente */
+        }
+    
+        .footer {
+            width: 100%; /* Asegura que ocupe todo el ancho */
+        }
+    
+        .enlaces {
+            height: auto; /* Cambia a auto para evitar problemas de altura */
+        }
     }
 
-    .cabecera__contenedor {
-        flex-direction: column; /* Cambia a columna */
-        height: auto; /* Ajusta la altura */
+
+    /* RESPONSIVIDAD PARA IPAD */ 
+    @media (max-width: 659px) and (min-width: 300px) {
+
+        .contenedor {
+            display: flex; /* Asegúrate de que el contenedor sea flex */
+            flex-direction: column; /* Cambia a columna en pantallas pequeñas */
+            flex-wrap: wrap;
+            width: 100%; /* Asegura que ocupe todo el ancho */
+        }
+    
+        .cabecera__contenedor {
+            flex-direction: row; /* Cambia a columna */
+            height: auto; /* Ajusta la altura */
+            align-items: flex-start;
+            margin: 1rem;
+            width: 350%; /* Asegura que ocupe todo el ancho */
+        }
+    
+        .cabecera__logo {
+            width: 80%;
+        }
+
+        .logo__item, .icono {
+            display: none; /* Oculta el logo */
+        }
+    
+        .menu__contenedor {
+            width: 100%; /* Ancho completo en pantallas pequeñas */
+            height: auto; /* Cambia a auto para evitar problemas de altura */
+            display: flex; /* Asegura que sea flex */
+            flex-wrap: wrap; /* Permite que los elementos se envuelvan */
+        }
+    
+        .menu__items {
+            flex-direction: row; /* Cambia a fila en pantallas pequeñas */
+            flex-wrap: wrap; /* Permite que los elementos se envuelvan */
+            justify-content: space-around;
+            width: 100%; /* Asegura que ocupe todo el ancho */
+        }
+    
+        .menu__items-icono {
+            width: 10%;
+            height: auto; /* Cambia a auto para mantener la proporción */
+            margin: 1rem;
+            padding: 1.5rem;
+        }
+    
+        .boton {
+            width: 5rem;
+            height: 2.5rem;
+            font-size: 18px;
+        }
+    
+        .card__sobremi,
+        .card__skill,
+        .card__hobbies,
+        .card__formacion,
+        .card__proyectos,
+        .card__contacto {
+            margin: 0.5rem; /* Reduce el margen */
+            font-size: 20px; /* Ajusta el tamaño de fuente */
+            width: 100%; /* Asegura que ocupen todo el ancho */
+        }
+    
+        .card__skill--contenido {
+            padding: 0;
+            margin: 1.5rem;
+        }
+    
+        .card__skill--items,
+        .card__hobbies--items {
+            padding: 1.5rem;
+            display: flex; /* Asegura que sea flex */
+            flex-direction: row; /* Asegura que esté en fila */
+            justify-content: space-around;
+            flex-wrap: wrap; /* Permite que se envuelvan */
+        }
+    
+        .card__skill__division,
+        .card__hobbies__division {
+            width: 40%;
+            height: auto; /* Cambia a auto para mantener proporción */
+            margin: 0 1rem;
+        }
+    
+        .skill--soft,
+        .hard {
+            display: flex; /* Asegura que sea flex */
+            justify-content: center;
+        }
+    
+        .card__hobbies__division {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            padding: 0 0.2rem;
+            margin: 0 0.5rem 5rem;
+        }
+    
+        .card__hobbies__item {
+            font-size: 18px;
+            width: 60px;
+            height: auto; /* Cambia a auto para mantener proporción */
+            align-items: start;
+        }
+    
+        .card__formacion--items {
+            justify-content: space-around;
+            gap: 2.5rem;
+        }
+    
+        .card__formacion__item {
+            font-size: 20px;
+        }
+    
+        .card__proyectos--items {
+            flex-direction: column; /* Cambia a columna en pantallas pequeñas */
+            padding: 1rem; /* Reduce el padding */
+        }
+    
+        .card__proyectos--icono {
+            object-fit: contain; /* Mantiene la proporción de las imágenes */
+            width: 100%; /* Asegura que ocupe todo el ancho */
+            height: auto; /* Cambia a auto para mantener proporción */
+        }
+    
+        .card__proyectos__division {
+            width: 100%; /* Ancho completo en pantallas pequeñas */
+            height: auto; /* Altura automática */
+        }
+    
+        .card__contacto__formulario {
+            font-size: 18px; /* Ajusta el tamaño de fuente */
+        }
+    
+        .footer {
+            width: 100%; /* Asegura que ocupe todo el ancho */
+        }
+    
+        .enlaces {
+            height: auto; /* Cambia a auto para evitar problemas de altura */
+        }
     }
 
-    .menu__contenedor {
-        width: 100%; /* Ancho completo en pantallas pequeñas */
-        font-size: 14px; /* Aumenta el tamaño de fuente */
-    }
 
-    .menu__items {
-        flex-direction: row; /* Cambia a fila en pantallas pequeñas */
-        flex-wrap: wrap; /* Permite que los elementos se envuelvan */
-    }
 
-    .card__sobremi,
-    .card__skill,
-    .card__hobbies,
-    .card__formacion,
-    .card__proyectos,
-    .card__contacto {
-        margin: 0.5rem; /* Reduce el margen */
-        font-size: 20px; /* Ajusta el tamaño de fuente */
-    }
-
-    .card__proyectos--items {
-        flex-direction: column; /* Cambia a columna en pantallas pequeñas */
-        padding: 1rem; /* Reduce el padding */
-    }
-
-    .card__proyectos__division {
-        width: 100%; /* Ancho completo en pantallas pequeñas */
-        height: auto; /* Altura automática */
-    }
-
-    .card__contacto__formulario {
-        font-size: 18px; /* Ajusta el tamaño de fuente */
-    }
-}
+   
